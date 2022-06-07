@@ -1,0 +1,13 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: CLOUD-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: hotel-inventory-service
+          uri: lb://HOTEL-INVENTORY-SERVICE
+          predicates:
+            - Path=/api/v1/hotelinventory/**
